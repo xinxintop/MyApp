@@ -17,7 +17,7 @@ email VARCHAR(64),                   #邮箱
 phone VARCHAR(16),             #手机号
 touxiang VARCHAR(128),        #头像图片路径
 real_name VARCHAR(32) ,      #用户名，如王小明
-is_admin int                #角色表：0管理员，1讲师，2学员
+role int                #角色表：0管理员，1讲师，2学员
 );
 
 #首页轮播图表

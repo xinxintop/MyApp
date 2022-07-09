@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户注册</title>
+		<link rel="stylesheet" href="./comm.css">
+	</head>
+<!--http://127.0.0.1:8080/reg.html -->
+	<body>
+		<h3 >用户注册</h3>
+		<div>
+		
+		<input class="shuru" type="text" placeholder="用户名" id="nme"><br>
+		<input class="shuru"  type="text"  placeholder="密码" id="pwd" ><br>
+		<input class="shuru"  type="text"  placeholder="真实姓名" id="real_name1" ><br>
+		<span>性别:</span>
+		<select  id="sex1">
+			<option value="1">男</option>
+			<option value="0">女</option>
+		</select><br>
+	
+		<input class="shuru"  type="text" placeholder="手机号" id="tel"><br>
+		<input class="shuru"  type="text"  placeholder="邮箱" id="em" ><br>
+		<input class="shuru"  type="text"  placeholder="头像" id="touxiang1" ><br>
+		<span>用户类型:</span>
+		<select id="role1">
+			<option value="1">学员</option>
+			<option value="0">老师</option>
+		</select><br>
+		<input type="button" id="regbtn" value="提交注册">
+		</div>
+	</body>
+	<script>
+		
+		
+		regbtn.onclick=function(){
+			let oname=nme.value
+			let upwd=pwd.value
+			let phone=tel.value
+			let email=em.value
+			
+			let touxiang=touxiang1.value
+			let real_name=real_name1.value
+			let data=`oname=${nme.value}&upwd=${pwd.value}&phone=${tel.value}&email=${em.value}
+		&ogender=${sex1.value}&role=${role1.value}&real_name=${real_name}&touxiang=${touxiang}`
+			console.log(data)
+			let xhr=new XMLHttpRequest()
+			let url='http://127.0.0.1:8080/v1/user/reg'
+			xhr.open('POST',url)
+			xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded;charset=utf-8')
+			xhr.onload=function(){
+				let result=xhr.responseText
+				let data=JSON.parse(result)
+				
+				alert(data.msg)
+			}
+			xhr.send(data)
+		}
+	</script>
+</html>

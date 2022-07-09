@@ -5,16 +5,23 @@ const app=express()
 // 引入用户模块
 const user=require('./routes/user.js')
 //设置端口
-app.listen(6000,()=>{
+app.listen(8080,()=>{
     console.log('服务器已经启动')
 })
 // post转对象
 app.use(express.urlencoded({
     extended:true
 }))
-// http://127.0.0.1:6000/v1/user/reg
-app.use('/v1/user',user)
 
+app.use(express.static('./public'))
+
+// 用户管理路由
+// http://127.0.0.1:8080/v1/user/
+app.use('/v1/user',user)
+//课程管理路由
+const course=require('./routes/course')
+// http://127.0.0.1:8080/v1/course
+app.use('/v1/course',course)
 app.use((err,req,res,next)=>{
     //所接收到的路由传递的错误
     console.log(err)
