@@ -94,10 +94,11 @@ table{
     border: 1px solid #ccc;
     margin: 0 auto;
     width: 1200px;
-    border-radius: 3px;
+    border-radius: 10px;
     text-align: center;
     color: #757575;
     border-collapse: collapse;
+   
 
 }
 th,td{
@@ -105,6 +106,7 @@ th,td{
     border: 1px solid #ccc;
     height: 40px;
 }
+
 #caozuo{
     width: 200px;
 }

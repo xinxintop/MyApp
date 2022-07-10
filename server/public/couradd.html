@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>课程添加路由</title>
+    <title>添加课程</title>
     <link rel="stylesheet" href="./comm.css">
 </head>
 <body>
-	<h3 >课程添加</h3>
+	<h3 >添加课程</h3>
     <div>
 		<!-- http://127.0.0.1:8080/couradd.html -->
 		<input class="shuru" type="text" placeholder="课程名" id="courName"><br>
@@ -25,26 +25,8 @@
 			<option value="0">进行中</option>
 		</select><br>
 		<input type="button" id="couraddbtn" value="添加">
-        
+        <a href="./courShow.html">返回查询</a>
 		</div>
-		<script>
-			couraddbtn.onclick=function(){
-				let data=`cour_name=${courName.value}&content=${cont.value}&cote_id=${cotegory.value}
-				&state=${state.value}`
-				let url=' http://127.0.0.1:8080/v1/course/add'
-				let xhr=new XMLHttpRequest()
-				xhr.open('POST',url)
-				xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded;charset=utf-8')
-				xhr.onload=function(){
-					let r=JSON.parse(xhr.responseText)
-                    if(r.code==200){
-						alert('添加成功')
-					}else{
-						alert('添加失败')
-					}
-				}
-				xhr.send(data)
-			}
-		</script>
+		<script src="./js/couradd.js"></script>
 </body>
 </html>

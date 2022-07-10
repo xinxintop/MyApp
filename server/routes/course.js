@@ -27,6 +27,7 @@ route.post('/add',(req,res,next)=>{
 route.delete('/del',(req,res,next)=>{
     let obj=req.query
     let cour_id=parseInt(obj.cour_id)
+    
     let sql=`delete from ol_course where cour_id=?`
     pool.query(sql,[cour_id],(err,r)=>{
         if(err){
@@ -61,7 +62,7 @@ route.put('/upd',(req,res,next)=>{
 // 课程查询路由
 // http://127.0.0.1:8080/v1/course/showALL
 route.get('/showALL',(req,res,next)=>{
-    let sql=`select cour_name,content,cote_id,state from ol_course`
+    let sql=`select cour_id ,cour_name,content,cote_id,state from ol_course`
     pool.query(sql,(err,r)=>{
         if(err){
             return next(err)}
@@ -73,4 +74,20 @@ route.get('/showALL',(req,res,next)=>{
         }
     })
 })
+
+// 按照id值查询路由
+http://127.0.0.1:8080/v1/course/showByID?cour_id=1
+route.get('/showByID',(req,res,next)=>{
+    let cour_id=req.query.cour_id
+    let sql=`select cour_name,cote_id,content,state from ol_course where cour_id=?`
+    pool.query(sql,[cour_id],(err,r)=>{
+        if(err){return next(err)}
+        if(r.length>0){
+            res.send(r)
+        }else{
+            res.send({code:200,msg:'查询失败'})
+        }
+    })
+})
+
 module.exports=route

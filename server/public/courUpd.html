@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改课程</title>
+    <link rel="stylesheet" href="./comm.css">
+</head>
+<body>
+	<h3 >课程添加</h3>
+    <div>
+		<!-- http://127.0.0.1:8080/courUpd.html -->
+		<input class="shuru"  type="text" placeholder="课程名" id="courName"><br>
+		<input class="shuru"   type="text"  placeholder="课程介绍" id="cont" ><br>
+		<span>课程分类:</span>
+		<select  id="cotegory">
+			<!-- <option value="1">免费课</option>
+			<option value="2">直播课</option>
+            <option value="3">线上课</option>
+            <option value="4">线下课</option> -->
+		</select><br>
+        <span>课程状态:</span>
+		<select id="state">
+			<!-- <option value="1">已完结</option>
+			<option value="0">进行中</option> -->
+		</select><br>
+		<input type="button" id="couraddbtn" value="保存修改">
+		<a href="./courShow.html">返回查询</a>
+        
+		</div>
+		<script src="./js/courUpd.js"></script>
+</body>
+</html>
