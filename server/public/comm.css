@@ -49,6 +49,7 @@ a{
     color: #fff; 
 
 }
+#loginbtn,
 #regbtn,
 #couraddbtn
 {
@@ -60,6 +61,11 @@ a{
     background-color: #4b95ff;
     border-radius: 3px;
     font-size: 12px;
+}
+#loginbtn:active,
+#regbtn:active,
+#couraddbtn:active{
+   background-color: #2a75fe;
 }
 span{
     margin-top:18px;

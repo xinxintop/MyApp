@@ -42,6 +42,7 @@ route.post('/reg',(req,res,next)=>{
 
 //用户的登录路由
 route.post('/login',(req,res,next)=>{
+ 
   var obj=req.body
   if(!obj.oname){
     res.send({code:502,msg:'用户名不能为空'})
@@ -51,14 +52,19 @@ route.post('/login',(req,res,next)=>{
     res.send({code:501,msg:"密码不能为空"})
     return
   }
-  pool.query('select oname,upwd  from ol_user where oname=? and upwd=?',[obj.oname,obj.upwd],(err,r)=>{
+  pool.query('select oname, upwd  from ol_user where oname=? and role=?',[obj.oname,obj.role],(err,r)=>{
     if(err){
       return next(err)
     }
     if(r.length>0){
-        res.send({code:200,msg:'登录成功'})
+    
+        if(r[0].upwd==obj.upwd){
+          res.send({code:200,msg:'登录成功'})
+        }else{
+          res.send({code:203,msg:'你的密码有误'})
+        }
     }else{
-      res.send({code:503,msg:'登录失败，用户名不存在或有误'})
+      res.send({code:503,msg:'您的用户名不存在或有误'})
     }
   })
 })
