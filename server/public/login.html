@@ -34,6 +34,7 @@
 			xhr.onload=function(){
 				let msg=JSON.parse(xhr.responseText)
 				alert(msg.msg)
+				window.location.href='http://127.0.0.1:8080/courShow.html'
 			}
 			xhr.send(data)
 		}

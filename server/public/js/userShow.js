@@ -19,7 +19,7 @@ function showALL(){
                 <td>${result[i].phone}</td>
                 <td>${role}</td>
                 <td id="caozuo"><a href="javascript:delbyID(${result[i].oid})">删除</a>
-                    <a href="#">编辑</a>
+                    <a href="./userUpd.html?id=${result[i].oid}">编辑</a>   
                     </td>
             </tr>
             `

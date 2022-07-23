@@ -60,6 +60,7 @@ route.post('/login',(req,res,next)=>{
     
         if(r[0].upwd==obj.upwd){
           res.send({code:200,msg:'登录成功'})
+      
         }else{
           res.send({code:203,msg:'你的密码有误'})
         }
@@ -83,7 +84,7 @@ route.delete('/del/:oid',(req,res,next)=>{
     }
   })
 })
-//用户的编辑路由
+//// 测试接口： http://127.0.0.1:8080/v1/user/update
 route.put('/update',(req,res,next)=>{
   var obj=req.body
   pool.query('update ol_user set ? where oid=?',[obj,obj.oid],(err,r)=>{
@@ -113,5 +114,20 @@ route.get('/showAll',(req,res,next)=>{
 
 })
 
+
+//通过di查询用户
+// 测试接口：http://127.0.0.1:8080/v1/user/selbyid?oid=4
+route.get('/selbyid',(req,res,next)=>{
+  let oid=req.query.oid;
+  let sql='select * from ol_user where oid=?'
+  pool.query(sql,[oid],(err,r)=>{
+    if(err){ return next(err)}
+    if(r.length>0){
+      res.send({code:200,msg:'查询成功',data:r})
+    }else{
+      res.send({code:201,msg:'查询失败'})
+    }
+  })
+})
 
 module.exports=route

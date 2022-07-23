@@ -22,6 +22,10 @@ app.use('/v1/user',user)
 const course=require('./routes/course')
 // http://127.0.0.1:8080/v1/course
 app.use('/v1/course',course)
+
+
+
+
 app.use((err,req,res,next)=>{
     //所接收到的路由传递的错误
     console.log(err)

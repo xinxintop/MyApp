@@ -18,6 +18,7 @@ regbtn.onclick=function(){
         let data=JSON.parse(result)
         
         alert(data.msg)
+        window.location.href='http://127.0.0.1:8080/userShow.html'
     }
     xhr.send(data)
 }
