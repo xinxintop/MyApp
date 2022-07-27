@@ -3,32 +3,39 @@
 	<head>
 		<meta charset="utf-8">
 		<title>用户注册</title>
-		<link rel="stylesheet" href="./comm.css">
+		<link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css"/>
+		<link rel="stylesheet" href="./bootstarp/css/bootstrap.css"/>
+		<script src="./bootstarp/js/bootstrap.bundle.js"></script>
+		<link rel="stylesheet" href="com.css">
 	</head>
 <!--http://127.0.0.1:8080/reg.html -->
 	<body>
+		<div class="container">
+
+		
 		<h3 >用户注册</h3>
 		<div>
 		
-		<input class="shuru" type="text" placeholder="用户名" id="nme"><br>
-		<input class="shuru"  type="text"  placeholder="密码" id="pwd" ><br>
-		<input class="shuru"  type="text"  placeholder="真实姓名" id="real_name1" ><br>
+		<input class="form-control w-25"  type="text" placeholder="用户名" id="nme"><br>
+		<input class="form-control w-25"   type="text"  placeholder="密码" id="pwd" ><br>
+		<input class="form-control w-25"  type="text"  placeholder="真实姓名" id="real_name1" ><br>
 		<span>性别:</span>
-		<select  id="sex1">
+		<select class="form-select w-25"   id="sex1">
 			<option value="1">男</option>
 			<option value="0">女</option>
 		</select><br>
 	
-		<input class="shuru"  type="text" placeholder="手机号" id="tel"><br>
-		<input class="shuru"  type="text"  placeholder="邮箱" id="em" ><br>
-		<input class="shuru"  type="text"  placeholder="头像" id="touxiang1" ><br>
+		<input class="form-control w-25"   type="text" placeholder="手机号" id="tel"><br>
+		<input class="form-control w-25"   type="text"  placeholder="邮箱" id="em" ><br>
+		<input class="form-control w-25"   type="text"  placeholder="头像" id="touxiang1" ><br>
 		<span>用户类型:</span>
-		<select id="role1">
+		<select class="form-select w-25"  id="role1">
 			<option value="1">学员</option>
 			<option value="0">老师</option>
 		</select><br>
-		<input type="button" id="regbtn" value="提交注册">
+		<input class="btn btn-primary "  type="button" id="regbtn" value="提交注册">
 		</div>
+	</div>
 	</body>
 	<script src="./js/reg.js"></script>
 </html>

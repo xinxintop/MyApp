@@ -4,12 +4,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>用户查询界面</title>
-    <link rel="stylesheet" href="comm.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="./bootstarp/css/bootstrap.css"/>
+    <script src="./bootstarp/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="com.css">
 </head>
-<body algin="center">
+<body >
+    <div class="container">
     <!-- http://127.0.0.1:8080/userShow.html -->
+  
     <h3 >用户查询</h3>
-    <table >
+    <table class="table table-striped table-bordered table-light">
        <thead>
         <th>编号</th>
         <th>用户名</th>
@@ -22,6 +28,8 @@
        <tbody id="tbody">   </tbody>
     </table><br>
     <a href="./reg.html">注册用户</a>
+</div>
     <script src="./js/userShow.js"></script>
+
 </body>
 </html> 

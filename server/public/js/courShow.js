@@ -30,8 +30,11 @@ window.onload=function(){
                 <td>${cote}</td>     
                 <td>${data[i].content}</td>     
                 <td>${state}</td>
-                <td><a href="javascript:del(${data[i].cour_id})">删除</a>
-                    <a href="./courUpd.html?id=${data[i].cour_id}">修改</a>
+                <td>
+                <div class="btn-group btn-group-sm">
+                    <a class="btn btn-outline-danger" href="javascript:del(${data[i].cour_id})">删除</a>
+                    <a class="btn btn-outline-primary"  href="./courUpd.html?id=${data[i].cour_id}">修改</a>
+                    </div>
                     </td>    
                 </tr>
                 `           

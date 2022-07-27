@@ -1,32 +1,55 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>添加课程</title>
-    <link rel="stylesheet" href="./comm.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>添加课程</title>
+	<link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css" />
+	<link rel="stylesheet" href="./bootstarp/css/bootstrap.css" />
+	<script src="./bootstarp/js/bootstrap.bundle.js"></script>
+	<link rel="stylesheet" href="com.css">
 </head>
+
 <body>
-	<h3 >添加课程</h3>
-    <div>
-		<!-- http://127.0.0.1:8080/couradd.html -->
-		<input class="" type="text" placeholder="课程名" id="courName"><br>
-		<input class=""  type="text"  placeholder="课程介绍" id="cont" ><br>
-		<span>课程分类:</span>
-		<select  id="cotegory">
-			<option value="1">免费课</option>
-			<option value="2">直播课</option>
-            <option value="3">线上课</option>
-            <option value="4">线下课</option>
-		</select><br>
-        <span>课程状态:</span>
-		<select id="state">
-			<option value="1">已完结</option>
-			<option value="0">进行中</option>
-		</select><br>
-		<input type="button" id="couraddbtn" value="添加">
-        <a href="./courShow.html">返回查询</a>
+	<div class="container-fluid">
+        <div class="row">
+			<!-- 左侧盒子 -->
+			<div class="col-md-3 d-none d-md-block ">
+
+			</div>
+			<!-- 右侧盒子1 -->
+			<div class="col-md-9 md-12">
+				<div class="couradd w-50">
+
+		
+					<h3>添加课程</h3>
+					<div>
+						<!-- http://127.0.0.1:8080/couradd.html -->
+						<input class="form-control " type="text" placeholder="课程名" id="courName"><br>
+						<input class="form-control" type="text" placeholder="课程介绍" id="cont"><br>
+						<span>课程分类:</span>
+						<select class="form-select" id="cotegory">
+							<option value="1">免费课</option>
+							<option value="2">直播课</option>
+							<option value="3">线上课</option>
+							<option value="4">线下课</option>
+						</select><br>
+						<span>课程状态:</span>
+						<select class="form-select" id="state">
+							<option value="1">已完结</option>
+							<option value="0">进行中</option>
+						</select><br>
+						<input class="btn btn-primary" type="button" id="couraddbtn" value="添加">
+						<a class="btn btn-primary " role="button" href="./courShow.html">返回查询</a>
+					</div>
+					</div>
+			</div>
+
 		</div>
-		<script src="./js/couradd.js"></script>
+		
+	</div>
+	<script src="./js/couradd.js"></script>
 </body>
+
 </html>

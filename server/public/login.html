@@ -3,23 +3,30 @@
 	<head>
 		<meta charset="utf-8">
 		<title>用户登录</title>
-		<link rel="stylesheet" href="./comm.css">
+		<link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css"/>
+		<link rel="stylesheet" href="./bootstarp/css/bootstrap.css"/>
+		<script src="./bootstarp/js/bootstrap.bundle.js"></script>
+		<link rel="stylesheet" href="com.css">
 	</head>
 <!--http://127.0.0.1:8080/login.html -->
 	<body>
+		<div class="container">
+
+		
 		<h3 >用户登录</h3>
 		<div>
 		
-		<input class="shuru" type="text" placeholder="用户名" id="nme"><br>
-		<input class="shuru"  type="text"  placeholder="密码" id="pwd" ><br>
+		<input class="form-control"  type="text" placeholder="用户名" id="nme"><br>
+		<input class="form-control"  type="text"  placeholder="密码" id="pwd" ><br>
 		
 		<span>用户类型:</span>
-		<select id="role1">
+		<select class="form-select"  id="role1">
 			<option value="1">学员</option>
 			<option value="0">老师</option>
 		</select><br>
-		<input type="button" id="loginbtn" value="登录">
+		<input class="btn btn-primary "  type="button" id="loginbtn" value="登录">
 		</div>
+	</div>
 	</body>
 	<!-- rc="./js/login.js" -->
 	<!-- http://127.0.0.1:8080/v1/user/login -->
