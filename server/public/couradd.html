@@ -1,55 +1,198 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>添加课程</title>
+    <link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./bootstarp/css/bootstrap.css" />
+    <script src="./bootstarp/js/bootstrap.bundle.js"></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>添加课程</title>
-	<link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css" />
-	<link rel="stylesheet" href="./bootstarp/css/bootstrap.css" />
-	<script src="./bootstarp/js/bootstrap.bundle.js"></script>
-	<link rel="stylesheet" href="com.css">
-</head>
+  <body>
+    <div class="mb-2">
+      <!-- 2.最外层功能块:导航条 -->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: #4f8dfe"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="./img/tmooc-logo.png" alt="" />在线课程后台</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#bkols"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="bkols">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">用户管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">学员管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">讲师管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./bg-course.html">课程管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">轮播图管理</a>
+              </li>
+            </ul>
 
-<body>
-	<div class="container-fluid">
-        <div class="row">
-			<!-- 左侧盒子 -->
-			<div class="col-md-3 d-none d-md-block ">
-
-			</div>
-			<!-- 右侧盒子1 -->
-			<div class="col-md-9 md-12">
-				<div class="couradd w-50">
-
-		
-					<h3>添加课程</h3>
-					<div>
-						<!-- http://127.0.0.1:8080/couradd.html -->
-						<input class="form-control " type="text" placeholder="课程名" id="courName"><br>
-						<input class="form-control" type="text" placeholder="课程介绍" id="cont"><br>
-						<span>课程分类:</span>
-						<select class="form-select" id="cotegory">
-							<option value="1">免费课</option>
-							<option value="2">直播课</option>
-							<option value="3">线上课</option>
-							<option value="4">线下课</option>
-						</select><br>
-						<span>课程状态:</span>
-						<select class="form-select" id="state">
-							<option value="1">已完结</option>
-							<option value="0">进行中</option>
-						</select><br>
-						<input class="btn btn-primary" type="button" id="couraddbtn" value="添加">
-						<a class="btn btn-primary " role="button" href="./courShow.html">返回查询</a>
-					</div>
-					</div>
-			</div>
-
-		</div>
-		
-	</div>
-	<script src="./js/couradd.js"></script>
-</body>
-
+            <a class="btn btn-success" href="login.html">管理员登录</a>
+            <a class="btn btn-secondary ms-3" href="">退出登录</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 左侧盒子 -->
+        <!-- 4.左侧侧边栏，md-3 md以下消失 -->
+        <div class="col-md-3 d-md-block d-none">
+          <div class="accordion" id="olsleft">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#olsitem1"
+                >
+                  内容管理
+                </button>
+              </h2>
+              <div
+                id="olsitem1"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#olsleft"
+              >
+                <div class="accordion-body">
+                  <!-- 第一项内容 -->
+                  <ul class="list-group list-group-flush">
+                    <a
+                      href="./bg-course.html"
+                      class="list-group-item list-group-item-action"
+                      >课程查询</a
+                    >
+                    <a
+                      href="./couradd.html"
+                      class="list-group-item list-group-item-action"
+                      >添加课程</a
+                    >
+                    <a href="#" class="list-group-item list-group-item-action"
+                      >课程阶段管理</a
+                    >
+                    <a href="#" class="list-group-item list-group-item-action"
+                      >课程分类管理</a
+                    >
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#olsitem2"
+                >
+                  多条件查询
+                </button>
+              </h2>
+              <div
+                id="olsitem2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#olsleft"
+              >
+                <div class="accordion-body">
+                  <!-- 第一项内容 -->
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">404页面</li>
+                    <li class="list-group-item">502页面</li>
+                    <li class="list-group-item">503页面</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#olsitem3"
+                >
+                  功能页面
+                </button>
+              </h2>
+              <div
+                id="olsitem3"
+                class="accordion-collapse collapse"
+                data-bs-parent="#olsleft"
+              >
+                <div class="accordion-body">
+                  <!-- 第一项内容 -->
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">404页面</li>
+                    <li class="list-group-item">502页面</li>
+                    <li class="list-group-item">503页面</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 右侧盒子1 -->
+        <div class="col-md-9 md-12">
+          <div class="couradd w-75">
+            <h3>添加课程</h3>
+            <div>
+              <!-- http://127.0.0.1:8080/couradd.html -->
+              <input
+                class="form-control"
+                type="text"
+                placeholder="课程名"
+                id="courName"
+              /><br />
+              <input
+                class="form-control"
+                type="text"
+                placeholder="课程介绍"
+                id="cont"
+              /><br />
+              <span>课程分类:</span>
+              <select class="form-select" id="cotegory">
+                <option value="1">免费课</option>
+                <option value="2">直播课</option>
+                <option value="3">线上课</option>
+                <option value="4">线下课</option></select
+              ><br />
+              <span>课程状态:</span>
+              <select class="form-select" id="state">
+                <option value="1">已完结</option>
+                <option value="0">进行中</option></select
+              ><br />
+              <input
+                class="btn btn-primary"
+                type="button"
+                id="couraddbtn"
+                value="添加"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/couradd.js"></script>
+  </body>
 </html>
