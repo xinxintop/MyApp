@@ -13,6 +13,9 @@ app.use(express.urlencoded({
     extended:true
 }))
 
+//用户拦截拦截中间件
+
+
 app.use(express.static('./public'))
 
 // 用户管理路由

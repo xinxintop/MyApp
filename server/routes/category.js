@@ -69,12 +69,27 @@ route.post('/add',(req,res,next)=>{
              return next(err)}
         
          if(r.length>0) {
-             res.send({code:200,data:r})
+             res.send({code:200,msg:'查询成功',data:r})
          }else{
              res.send({code:201,msg:'查询失败'})
          }
      })
  })
+
+//  根据课程id查找分类
+// http://127.0.0.1:8080/v1/category/selbyCoteid
+route.get('/selbyCoteid',(req,res,next)=>{
+    let cote_id=req.query.cote_id
+    let sql=`select cote_name from ol_cotegory where cote_id=?`
+    pool.query(sql,[cote_id],(err,r)=>{
+        if(err){return next(err)}
+        if(r.length>0){
+            res.send({code:200,msg:'查询成功',data:r})
+        }else{
+            res.send({code:201,msg:'查询失败'})
+        }
+    })
+})
  
 
 

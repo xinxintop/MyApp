@@ -145,12 +145,12 @@
 		<div class="login">
 			     <div class="container border border-1">
 					<div class="title">
-				   <p>登录</p>
+				   <p>超级管理员登录</p>
 				</div>
 				<div class="enter">
-					<input type="text" placeholder="邮箱或手机号">
-					<input type="password" placeholder="密码">
-					<button>登录</button>
+					<input id="nme" type="text" placeholder="邮箱或手机号">
+					<input id="pwd" type="password" placeholder="密码">
+					<button id="loginbtn">登录</button>
 					<ul style="list-style: none;">
 						<li><a  href="#">忘记密码</a></li>|
 						<li><a href="#">注册</a></li>
@@ -170,20 +170,6 @@
 				
 			</div>
 		
-		<!-- <div class="container">
-		<h3 >用户登录</h3>
-		<div>
-		
-		<input class="form-control"  type="text" placeholder="用户名" id="nme"><br>
-		<input class="form-control"  type="text"  placeholder="密码" id="pwd" ><br>
-		
-		<span>用户类型:</span>
-		<select class="form-select"  id="role1">
-			<option value="1">学员</option>
-			<option value="0">老师</option>
-		</select><br>
-		<input class="btn btn-primary "  type="button" id="loginbtn" value="登录">
-		</div> -->
 	</div>
 	</body>
 	<!-- rc="./js/login.js" -->
@@ -191,15 +177,20 @@
 	<script >
 		loginbtn.onclick=function(){
 		
-			let data=`oname=${nme.value}&upwd=${pwd.value}&role=${role1.value}`
+			let data=`oname=${nme.value}&upwd=${pwd.value}`
 			let url='http://127.0.0.1:8080/v1/user/login'
 			let xhr=new XMLHttpRequest()
 			xhr.open('POST',url)
 			xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded;charset=utf-8')
 			xhr.onload=function(){
 				let msg=JSON.parse(xhr.responseText)
-				alert(msg.msg)
-				window.location.href='http://127.0.0.1:8080/courShow.html'
+				if(msg.code==200){
+					window.location.href='http://127.0.0.1:8080/bg-main.html'
+					alert('登录成功')
+				}else{
+					alert(msg.msg)
+				}
+				
 			}
 			xhr.send(data)
 		}

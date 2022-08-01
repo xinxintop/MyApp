@@ -76,7 +76,7 @@ route.get('/showALL',(req,res,next)=>{
 })
 
 // 按照id值查询路由
-http://127.0.0.1:8080/v1/course/showByID?cour_id=1
+// http://127.0.0.1:8080/v1/course/showByID?cour_id=1
 route.get('/showByID',(req,res,next)=>{
     let cour_id=req.query.cour_id
     let sql=`select cour_name,cote_id,content,state from ol_course where cour_id=?`
@@ -91,6 +91,20 @@ route.get('/showByID',(req,res,next)=>{
 })
 
 
+// 根据分类id查询课程
+// http://127.0.0.1:8080/v1/course/selbyCoteid
+route.get('/selbyCoteid',(req,res,next)=>{
+    let cote_id=parseInt(req.query.cote_id)
+    sql=`select cour_name,cote_id,content,state from ol_course where cote_id=?`
+    pool.query(sql,[cote_id],(err,r)=>{
+        if(err){return next(err)}
+        if(r.length>0){
+            res.send({code:200,msg:'查询成功',data:r})
+        }else{
+            res.send({code:201,msg:'查询失败'})
+        }
+    })
+})
 
 
 module.exports=route

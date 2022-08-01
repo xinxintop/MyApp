@@ -31,7 +31,7 @@
 		<input  class="form-control"  type="text"  placeholder="邮箱" id="em" ><br>
 		<input  class="form-control"   type="text"  placeholder="头像" id="touxiang1" ><br>
 		<input class="btn btn-primary "  type="button" id="update1" value="修改">
-		<a class="btn btn-primary " role="button" href="./userShow.html">返回</a>
+		<a class="btn btn-primary " role="button" href="./bg-main.html">返回</a>
 		</div>
 	</div>
 	</body>
@@ -82,9 +82,7 @@
 	        
 		function update(id){
 				
-				let data=`oname=${nme.value}&real_name=${real_name1.value}&ogender=${sex1.value}
-			   &phone=${tel.value}&touxiang
-			   =${touxiang1.value}&oid=${id}`
+				let data=`oname=${nme.value}&real_name=${real_name1.value}&ogender=${sex1.value}&phone=${tel.value}&touxiang=${touxiang1.value}&oid=${id}`
 			   let url=' http://127.0.0.1:8080/v1/user/update'
 			   let xhr=new XMLHttpRequest()
 			   xhr.open('PUT',url)
