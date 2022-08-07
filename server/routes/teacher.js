@@ -5,14 +5,14 @@ const route=express.Router()
 //引入pool模块
 const pool=require('../pool')
 
-//根据用户添加学员的路由
-// http://127.0.0.1:8080/v1/student/add
+//根据用户添加教师的路由
+// http://127.0.0.1:8080/v1/teacher/add
 
 route.post('/add',(req,res,next)=>{
-   let stu=req.body
+   let obj=req.body
   
-   sql='insert into ol_stu set ?'
-   pool.query(sql,[stu],(err,r)=>{
+   sql='insert into ol_teach set ?'
+   pool.query(sql,[obj],(err,r)=>{
     if(err){return next(err)}
     if(r.affectedRows>0){
         res.send({code:200,msg:'添加成功'})
@@ -22,14 +22,14 @@ route.post('/add',(req,res,next)=>{
    })
  
 })
-// 根据id删除学员的路由
-// http://127.0.0.1:8080/v1/student/del
+// 根据id删除教师的路由
+// http://127.0.0.1:8080/v1/teacher/del
 route.delete('/del',(req,res,next)=>{
     let obj=req.query
-    let stu_id=parseInt(obj.stu_id)
+    let ot_id=parseInt(obj.ot_id)
     
-    let sql=`delete from ol_stu where stu_id=?`
-    pool.query(sql,[stu_id],(err,r)=>{
+    let sql=`delete from ol_teach where ot_id=?`
+    pool.query(sql,[ot_id],(err,r)=>{
         if(err){
             return next(err)
         }
@@ -42,12 +42,12 @@ route.delete('/del',(req,res,next)=>{
 })
 
 // 学员信息修改路由
-// http://127.0.0.1:8080/v1/student/upd
+// http://127.0.0.1:8080/v1/teacher/upd
 route.put('/upd',(req,res,next)=>{
     let obj=req.body
-    let stu_id=parseInt(obj.stu_id)
-    let sql=`update ol_stu set ? where stu_id=?`
-    pool.query(sql,[obj,stu_id],(err,r)=>{
+    let ot_id=parseInt(obj.ot_id)
+    let sql=`update ol_teach set ? where ot_id=?`
+    pool.query(sql,[obj,ot_id],(err,r)=>{
         if(err){
             return next(err)
         }
@@ -60,9 +60,9 @@ route.put('/upd',(req,res,next)=>{
 })
 
 // 学员信息查询路由
-// http://127.0.0.1:8080/v1/student/showALL
+// http://127.0.0.1:8080/v1/teacher/showALL
 route.get('/showALL',(req,res,next)=>{
-    let sql=`select stu_id ,grade,oid,score from ol_stu`
+    let sql=`select ot_id,oid,introduce,expr,level from ol_teach`
     pool.query(sql,(err,r)=>{
         if(err){
             return next(err)}
@@ -76,11 +76,11 @@ route.get('/showALL',(req,res,next)=>{
 })
 
 // 学员信息id值查询路由
-// http://127.0.0.1:8080/v1/student/showByID?stu_id=1
+// http://127.0.0.1:8080/v1/teacher/showByID?ot_id=2
 route.get('/showByID',(req,res,next)=>{
-    let stu_id=req.query.stu_id
-    let sql=`select stu_id ,grade,oid,score  from ol_stu where stu_id=?`
-    pool.query(sql,[stu_id],(err,r)=>{
+    let ot_id=req.query.ot_id
+    let sql=`select ot_id,oid,introduce,expr,level  from ol_teach where ot_id=?`
+    pool.query(sql,[ot_id],(err,r)=>{
         if(err){return next(err)}
         if(r.length>0){
             res.send({code:200,msg:'查询成功',data:r})

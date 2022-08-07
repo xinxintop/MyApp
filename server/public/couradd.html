@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="bkols">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">用户管理</a>
+                <a class="nav-link" href="./bg-main.html">用户管理</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">学员管理</a>
@@ -153,37 +153,40 @@
           </div>
         </div>
         <!-- 右侧盒子1 -->
-        <div class="col-md-9 md-12">
-          <div class="couradd w-75">
-            <h3>添加课程</h3>
-            <div>
+        <div class="col-md-9 md-12 border-start border-1 vh-100">
+          <div class="couradd ">
+            <h3 class="mx-auto my-5 w-25 text-center">添加课程</h3>
+            <div class="main w-50 mx-auto my-0">
               <!-- http://127.0.0.1:8080/couradd.html -->
+              <span class="">课程名称:</span>
               <input
                 class="form-control"
                 type="text"
-                placeholder="课程名"
                 id="courName"
-              /><br />
-              <input
-                class="form-control"
-                type="text"
-                placeholder="课程介绍"
-                id="cont"
-              /><br />
+              />
+              <span>课程介绍:</span>
+              <textarea class="form-control my-3" name="content" id="cout" cols="30" rows="10" style="resize:none;">
+
+              </textarea>
               <span>课程分类:</span>
               <select class="form-select" id="cotegory">
                 <option value="1">免费课</option>
                 <option value="2">直播课</option>
                 <option value="3">线上课</option>
-                <option value="4">线下课</option></select
+                <option value="4">线下课</option>
+                </select
               ><br />
+              <div class="mb-3">
+                <label  >上传课程图片</label>
+                <input  type="file" style="width: 200px;height: 200px;" multiple>
+              </div>
               <span>课程状态:</span>
               <select class="form-select" id="state">
                 <option value="1">已完结</option>
                 <option value="0">进行中</option></select
               ><br />
               <input
-                class="btn btn-primary"
+                class="btn btn-primary mx-auto my-3 d-md-block w-25"
                 type="button"
                 id="couraddbtn"
                 value="添加"

@@ -12,9 +12,9 @@ route.get('/sel',(req,res,next)=>{
     pool.query(sql,(err,r)=>{
         if(err){return next(err)}
         if(r.length>0){
-            res.send(r)
+            res.send({code:200,msg:'查询成功',data:r})
         }else{
-            console.log(查询失败)
+            console.log({code:201,msg:'查询失败'})
         }
     })
      
@@ -22,13 +22,26 @@ route.get('/sel',(req,res,next)=>{
 
 
 //添加轮播图模块
-
+//http://127.0.0.1:8080/v1/indeximg/add
+route.post('/add',(req,res,next)=>{
+  var obj=req.body
+  let sql=`insert into indeximg set ? `
+  pool.query(sql,[obj],(err,r)=>{
+    if(err) return next(err)
+   
+    if(r.affectedRows>0){
+      res.send({code:200,msg:'添加成功'})
+    }else{
+      res.send({code:201,msg:'添加失败'})
+    }
+  })
+})
 
 //删除轮播图模块
 // http://127.0.0.1:8080/v1/indeximg/del?index_id=1
 route.delete('/del',(req,res,next)=>{
     var id=req.query.index_id
-  
+    
     pool.query('delete from indeximg where index_id=?',[id],(err,r)=>{
       if(err){
         return next(err)

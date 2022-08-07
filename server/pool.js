@@ -11,5 +11,6 @@ const pool=mysql.createPool({
     connectionLimit:20
 
 })
+
 // 暴露pool对象
-module.exports=pool
+module.exports= pool
