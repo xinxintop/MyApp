@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>基础文件</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css"/>
+		<link rel="stylesheet" href="./bootstarp/css/bootstrap.css"/>
+		<script src="./bootstarp/js/bootstrap.bundle.js"></script>
+		<link rel="stylesheet" href="com.css">
+	</head>
+	<body>
+        <div class="mb-2">
+            <!-- 2.最外层功能块:导航条 公共代码-->
+            <nav
+              class="navbar navbar-expand-lg navbar-dark"
+              style="background-color: #4f8dfe"
+            >
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"
+                  ><img src="./img/tmooc-logo.png" alt="" />在线课程后台</a
+                >
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#bkols"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="bkols">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link " href="./bg-main.html">用户管理</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./bg-student.html">学员管理</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./bg-teach.html">讲师管理</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./bg-course.html">课程管理</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">轮播图管理</a>
+                    </li>
+                  </ul>
+      
+                  <a class="btn btn-success" href="login.html">管理员登录</a>
+                  <a class="btn btn-secondary ms-3" href="">退出登录</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <!-- 左侧侧边栏 -->
+          <div class="ols-admin-body mt-2">
+            <!-- 让容器充满整个页面 -->
+            <div class="container-fluid">
+              <div class="row">
+                <!-- 4.左侧侧边栏，md-3 md以下消失 -->
+                <div class="col-md-3 d-md-block d-none">
+                  <div class="list-group w-75 mx-auto mt-3" id="list-tab">
+                    <a
+                      class="list-group-item list-group-item-action active"
+                      id="list-home-list"
+                      data-bs-toggle="list"
+                      href="#userlist"
+                      >查询所有用户</a
+                    >
+                    <a
+                      class="list-group-item list-group-item-action"
+                      id="list-profile-list"
+                      data-bs-toggle="list"
+                      href="#useradd"
+                      >添加用户</a
+                    >
+                    <a
+                      class="list-group-item list-group-item-action"
+                      id="list-messages-list"
+                      data-bs-toggle="list"
+                      href="#userupd"
+                      >修改用户</a
+                    >
+                    <a
+                      class="list-group-item list-group-item-action"
+                      id="list-settings-list"
+                      data-bs-toggle="list"
+                      href="#userdel"
+                      >删除用户</a
+                    >
+                  </div>
+                </div>
+
+
+          <!-- 右侧主体区域 -->
+	</body>
+</html>

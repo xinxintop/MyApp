@@ -2,6 +2,8 @@
 const express=require('express')
 // 创建web服务器
 const app=express()
+
+var cors= require('cors')
 // 引入用户模块
 const user=require('./routes/user.js')
 //设置端口
@@ -15,7 +17,7 @@ app.use(express.urlencoded({
 
 //用户拦截拦截中间件
 
-
+app.use(cors())
 app.use(express.static('./public'))
 
 // 用户管理路由

@@ -4,7 +4,7 @@ const mysql=require('mysql')
 const pool=mysql.createPool({
     user:'root',
     password:'123456',
-    database:'Ols',
+    database:'ols',
     port:3306,
     host:'127.0.0.1',
     multipleStatements:true,

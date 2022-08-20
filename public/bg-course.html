@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstarp/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./bootstarp/css/bootstrap.css" />
+    <script src="./bootstarp/js/bootstrap.bundle.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- http://127.0.0.1:8080/bg-course.html  -->
+    <!-- 在初期就要想好布局怎么写 -->
+    <!-- 1.准备写头部菜单 -->
+    <div class="mb-2">
+      <!-- 2.最外层功能块:导航条 -->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: #4f8dfe"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="./img/tmooc-logo.png" alt="" />在线课程后台</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#bkols"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="bkols">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./bg-main.html">用户管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./bg-student.html">学员管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./bg-teach.html">讲师管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">课程管理</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./bg-lunbo.html">轮播图管理</a>
+              </li>
+            </ul>
+
+            <a class="btn btn-success" href="login.html">管理员登录</a>
+            <a class="btn btn-secondary ms-3" href="">退出登录</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- 在想课程主体 -->
+    <div class="ols-admin-body mt-2">
+      <!-- 让容器充满整个页面 -->
+      <div class="container-fluid">
+        <div class="row">
+          <!-- 4.左侧侧边栏，md-3 md以下消失 -->
+          <div class="col-md-3 d-md-block d-none">
+            <div class="accordion" id="olsleft">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#olsitem1"
+                  >
+                    课程管理
+                  </button>
+                </h2>
+                <div id="olsitem1" class="accordion-collapse collapse show" data-bs-parent="#olsleft">
+                  <div class="accordion-body">
+                    <!-- 第一项内容 -->
+                    <div class="list-group list-group-flush" id="list-tab">
+                        <a class="list-group-item list-group-item-action active"  data-bs-toggle="list" href="#cour-query">课程查询</a>
+                        <a class="list-group-item list-group-item-action"  data-bs-toggle="list" href="#cour-add" >添加课程</a>
+                        <a class="list-group-item list-group-item-action"  data-bs-toggle="list" href="#cour-upd" >修改课程</a>
+                        <a class="list-group-item list-group-item-action"  data-bs-toggle="list" href="#cour-student" >学生-课程管理</a>
+                        <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#cour-teach" >讲师-课程管理</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- 5.右侧列表区 md-9  其他情况占满col-12 -->
+          <div class="col-md-9 col-12 border-start border-1 vh-100">
+            <div class="d-md-none d-block">
+                132213
+            </div>
+           
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="cour-query">
+                <div>
+                  <!-- 列表标题 -->
+                  <h2>课程管理</h2>
+                  <!-- 搜索和选择区域 -->
+    
+                  <div
+                    class="row my-2 py-2 align-items-center border-bottom border-1"
+                  >
+                    <!-- 左侧页面记录数 -->
+                    <div class="col-5">
+                      <span>每页显示记录数</span>
+                      <select name="" id="">
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                      </select>
+                    </div>
+                    <div class="col-7">
+                      <div class="input-group">
+                        <input type="text" class="form-control" />
+                        <button class="btn btn-primary">搜索</button>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- 表格区域 -->
+                  <table class="table table-striped table-bordered table-light">
+                    <thead>
+                      <th>编号</th>
+                      <th>课程名</th>
+                      <th>课程分类</th>
+                      <th>课程介绍</th>
+                      <th>课程状态</th>
+                      <th id="caozuo">操作</th>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+    
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="cour-add">
+                <div class="row">
+                  <div class="col-md-3 d-md-block d-none"></div>
+                  <div class="col-md-6">
+                    <div class="couradd ">
+                      <h3 class="mx-auto my-5 text-center">添加课程</h3>
+                      <div class="main mx-auto my-0">
+                        <!-- http://127.0.0.1:8080/couradd.html -->
+                        <span class="">课程名称:</span>
+                        <input
+                          class="form-control"
+                          type="text"
+                          id="courName"
+                        />
+                        <span>课程介绍:</span>
+                        <textarea class="form-control my-3" name="content" id="cout" cols="30" rows="10" style="resize:none;">
+          
+                        </textarea>
+                        <span>课程分类:</span>
+                        <select class="form-select" id="cotegory">
+                          <option value="1">免费课</option>
+                          <option value="2">直播课</option>
+                          <option value="3">线上课</option>
+                          <option value="4">线下课</option>
+                          </select
+                        ><br />
+                        <div class="mb-3">
+                          <label  >上传课程图片</label>
+                          <input  type="file" style="width: 200px;height: 200px;" multiple>
+                        </div>
+                        <span>课程状态:</span>
+                        <select class="form-select" id="state">
+                          <option value="1">已完结</option>
+                          <option value="0">进行中</option></select
+                        ><br />
+                        <input
+                          class="btn btn-primary mx-auto my-3 d-md-block w-25"
+                          type="button"
+                          id="couraddbtn"
+                          value="添加"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 d-md-block d-none"></div>
+               </div>
+                
+              </div>
+              <div class="tab-pane fade" id="cour-upd">
+                <div class="mx-auto w-50">
+                  <h3 class="mx-auto w-25">修改课程</h3>
+                    <div>
+                    <!-- http://127.0.0.1:8080/courUpd.html -->
+                    <input class="form-control"  type="text" placeholder="课程名" id="courName"><br>
+                    <input class="form-control"   type="text"  placeholder="课程介绍" id="cont" ><br>
+                    <span>课程分类:</span>
+                    <select class="form-select"  id="cotegory">
+                      <!-- <option value="1">免费课</option>
+                      <option value="2">直播课</option>
+                            <option value="3">线上课</option>
+                            <option value="4">线下课</option> -->
+                    </select><br>
+                        <span>课程状态:</span>
+                    <select class="form-select"  id="state">
+                      <!-- <option value="1">已完结</option>
+                      <option value="0">进行中</option> -->
+                    </select><br>
+                    <input class="btn btn-primary "  type="button" id="couraddbtn" value="保存修改">
+                    <a class="btn btn-primary " role="button" href="./courShow.html">返回查询</a>
+                        
+                    </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="cour-student">...</div>
+              <div class="tab-pane fade" id="cour-teach">...</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/courShow.js"></script>
+    <script src="./js/couradd.js"></script>
+  </body>
+</html>
