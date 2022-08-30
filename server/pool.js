@@ -3,7 +3,7 @@ const mysql=require('mysql')
 //创建连接池
 const pool=mysql.createPool({
     user:'root',
-    password:'123456',
+    password:'fuxxadmin123',
     database:'ols',
     port:3306,
     host:'127.0.0.1',
